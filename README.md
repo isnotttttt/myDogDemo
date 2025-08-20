@@ -2,7 +2,6 @@
 本项目基于UnitreeGO1EDU版本机械狗进行开发，开发系统使用基于arm指令集Ubuntu系统，编程语言使用c++开发，功能实现基于paddledetection预测框架（百度飞浆套件）、opencv视觉开发框架、unitree_legged_sdk四足机器人控制框架。
 
 参考官方文档 https://www.yuque.com/ironfatty/nly1un/fscioc
-
 需要ros基础知识，c++基础，python基础
 
 
@@ -24,14 +23,17 @@ CUDNN_LIB  # cudnn路径
 TENSORRT_INC_DIR  # TensorRT 的include路径
 TENSORRT_LIB_DIR  # TensorRT 的lib路径
 
+
 tactile_paving/scripts/signalLampDetection.py：
 第一行修改为本地python路径
+
 
 编译步骤
 1.mkdir ~/catkin_ws
 2.解压本目录下的src到~/catkin_ws文件夹下
 3.cd ~/catkin_ws 
 4.catkin_make
+
 
 功能包说明
 face_light_sdk_nano  机器狗头部灯光
@@ -41,10 +43,12 @@ slamware_ros_sdk、slamware_sdk  雷达发布话题
 tactile_paving  导盲场景
 unitree_legged_msgs、unitree_legged_real、unitree_legged_sdk-master  宇树机器狗控制功能包
 
+
 主要运行命令
 roslaunch slamware_ros_sdk slamware_ros_sdk_server_node.launch ip_address:=192.168.11.1  开启雷达
 roslaunch tactile_paving Start_control.launch   导盲场景。自动开启寻迹、雷达避障、机器狗前灯
 roslaunch tactile_paving start_voice.launch  语音控制
+
 
 主要业务代码
 tactile_paving/src/example_Tracing.cpp  寻迹场景
@@ -54,5 +58,6 @@ tactile_paving/scripts/signalLampDetection.py  python版本飞桨目标识别。
 robot_voice/src/voice_control.cpp  语音识别主要逻辑。
 paddle_detection/src/main.cc  c++版本飞桨目标识别。
 face_light_sdk_nano/src/main.cpp  狗头部灯光
+
 
 tactile_paving/launch/Start_control.launch  可修改内容
