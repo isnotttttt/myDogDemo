@@ -1,0 +1,2 @@
+# myDogDemo
+本项目基于UnitreeGO1EDU版本机械狗进行开发，开发系统使用基于arm指令集Ubuntu系统，编程语言使用c++开发，功能实现基于paddledetection预测框架（百度飞浆套件）、opencv视觉开发框架、unitree_legged_sdk四足机器人控制框架。
